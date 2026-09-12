@@ -1,0 +1,6 @@
+classes/
+data/
+*.class
+Thumbs.db
+.DS_Store
+*.log

@@ -1,2 +1,40 @@
 # Java-2048
-A redundant-style Java Swing 2048 game with graphical launcher, JDK 25, one-click bat launcher
+
+一个用 Java Swing 写的 2048 小游戏，带图形化启动器、三种棋盘规格（4x4 / 5x5 / 6x6）、三套配色主题、方向键与鼠标双操作、最高分本地存档。
+
+## 环境要求
+
+- JDK 25（脚本会自动在常见目录探测 jdk-25，并在当前会话临时配置 JAVA_HOME / PATH，不修改系统环境变量）
+- Windows（一键脚本为 .bat）
+
+## 一键运行
+
+双击项目根目录下的 `启动游戏.bat`：
+
+1. 脚本自动查找本机 jdk-25；
+2. 提示输入给 JVM 分配的最大堆内存（MB，直接回车默认 512）；
+3. 自动编译 `src` 下全部源码到 `classes`；
+4. 启动图形化控制台，选择规格和主题后点击“启动游戏”。
+
+## 手动运行
+
+```bat
+javac -encoding UTF-8 -d classes src\*.java
+java -cp classes Main2048
+```
+
+## 操作方式
+
+- 方向键或 W/A/S/D 移动方块；
+- R 键重新开始；
+- 也可以点击窗口底部的方向圆盘用鼠标操作。
+
+## 目录结构
+
+```
+Java-2048
+├─ src            全部 Java 源码（默认包，无第三方依赖）
+├─ classes        编译输出（运行时自动生成）
+├─ data           最高分存档（运行时自动生成）
+└─ 启动游戏.bat    一键编译并启动
+```
